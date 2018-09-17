@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台首页</title>
+    <link rel="stylesheet" href="../../public/admin/css/home.css">
+    <script src="../../public/common/jquery-3.3.1/jquery-3.3.1.js"></script>
+    <script src="../../public/common/layer/layer.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="head">
+    <div class="head-top"><img src="">
+    </div>
+    <div class="head-name">欢迎<span><?php echo $username;?></span>进入后台管理系统</div>
+    <div class="head-out"><a href="../common/loginout.php">退出</a></div>
+</div>
+<div class="left">
+    <div class="left-top"><a href="../home/home.php">修改密码</a></div>
+    <div class="left-bt"><a href="../upload/upload.php">上传视频</a></div>
+    <div class="left-bto"><a href="manage.php" style="background-color: blue">视频管理</a></div>
+</div>
+
+<div class="right">
+    <div class="right-top"><a>视频管理</a></div>
+    <form method="post" action="manage.php">
+        <div class="right-xg">
+            <table class="table">
+                <tr>
+                    <th>Item ID</th>
+                    <th>Item Name</th>
+                    <th>Item Price</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Item 1</td>
+                    <td>$1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Item 2</td>
+                    <td>$2</td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+</body>
+</html>

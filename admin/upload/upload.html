@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台首页</title>
+    <link rel="stylesheet" href="../../public/admin/css/home.css">
+    <script src="../../public/common/jquery-3.3.1/jquery-3.3.1.js"></script>
+    <script src="../../public/common/layer/layer.js"></script>
+</head>
+<body>
+<div class="head">
+    <div class="head-top"><img src="">
+    </div>
+    <div class="head-name">欢迎<span><?php echo $username;?></span>进入后台管理系统</div>
+    <div class="head-out"><a href="../common/loginout.php">退出</a></div>
+</div>
+<div class="left">
+    <div class="left-top"><a href="../home/home.php">修改密码</a></div>
+    <div class="left-bt"><a href="upload.php" style="background-color: blue">上传视频</a></div>
+    <div class="left-bto"><a href="../manage/manage.php">视频管理</a></div>
+</div>
+<div class="right">
+    <div class="right-top"><a>上传视频</a></div>
+    <form method="post" action="upvideo.php" enctype="multipart/form-data">
+        <div class="right-xg">
+            <div><label for="vdtype">上传视频类型：</label><input type="text" id="vdtype" name="vdtype"></div>
+            <div><label for="vdname">视 &nbsp;频 &nbsp;名 &nbsp;称：&nbsp;</label><input type="text" id="vdname"
+                                                                                    name="vdname"></div>
+            <div><label>上传视频:</label><input type="file" id="file" name="file"></div>
+            <button>确认</button>
+        </div>
+    </form>
+</div>
+<script>
+    $('form').submit(function () {
+        var vdtype = $('#vdtype').val();
+        var vdname = $('#vdname').val();
+        var file = $('#file')[0].files[0];
+        var fromdata = new FormData();
+        fromdata.append('vdtype', vdtype);
+        fromdata.append('vdname', vdname);
+        fromdata.append('file', file);
+        //判断用户在提交前各项数据是否存在
+        if (!vdtype) {
+            layer.msg('请输入视频类型', {time: 2000});
+            return false;
+        }
+        if (!vdname) {
+            layer.msg('请输入视频名称', {time: 2000});
+            return false;
+        }
+        if (!file) {
+            layer.msg('请选择要上传的视频', {time: 2000});
+            return false;
+        }
+        $.ajax({
+            type: 'post',
+            url: 'upvideo.php',
+            data: fromdata,
+            contentType: false, //前面已经声明了是FormData对象
+            processData: false, //表示不需要对数据做处理
+            cache: false, //上传文件不需要缓存
+            success: function (res) {
+                res = JSON.parse(res);
+                if (res.status == 1) {
+                    layer.msg(res.message, {time: 1000}, function () {
+                        window.location.href = '../manage/manage.php';
+                    });
+                } else {
+                    layer.msg(res.message, {time: 2000});
+                }
+            }
+        });
+        return false;
+    });
+</script>
+</body>
+</html>

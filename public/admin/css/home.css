@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    height: 100px;
+    position: relative;
+    background-color: #66CCCC;
+}
+
+.left {
+    width: 20%;
+    height: 791px;
+    float: left;
+    background-color: cadetblue;
+    position: relative;
+}
+
+.right {
+    width: 80%;
+    height: 791px;
+    float: left;
+    position: relative;
+}
+
+.head-name {
+    text-align: center;
+}
+
+.head-out {
+    text-align: right;
+
+}
+
+.head-out a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 7px 10px;
+    color: black;
+    margin-bottom: 0px;
+}
+
+.head-out a:hover {
+    color: #ff0;
+    background-color: blue;
+}
+
+.head-name span {
+    color: black;
+    font-weight: bold;
+}
+
+.left div {
+
+    border: 0px solid;
+    text-align: center;
+    margin-top: 50%;
+}
+
+.left a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 7px 10px;
+    color: black;
+}
+
+.left a:hover {
+    color: #ff0;
+    background-color: blue;
+}
+
+.right-top {
+    background-color: darkgray;
+}
+
+.right-xg {
+    height: 719px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    margin-top: 15%;
+
+}
+
+.right-xg input {
+    width: 20%;
+    height: 42px;
+    position: relative;
+}
+
+.right-xg div {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.right-p2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.right-xg button {
+    width: 20%;
+    height: 45px;
+    background-color: #ee7700;
+    border: none;
+    color: white;
+    font-size: 18px;
+}
