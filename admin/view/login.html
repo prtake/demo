@@ -19,7 +19,7 @@
         <div class="logD logDtip">
             <p class="p1">登录</p>
         </div>
-        <form method="post" action="login.php">
+        <form method="post" action="../function/login.php">
             <!-- 输入框 -->
             <div class="lgD">
                 <img src="../../public/admin/img/logName.jpg" width="20" height="20" alt="用户名"/>
@@ -54,14 +54,13 @@
         //ajax交互开始
         $.ajax({
             type: 'post',
-            url: 'login.php',
+            url: '../function/login.php',
             data: {username: username, password: password},
             success: function (res) {
                 res = JSON.parse(res);
                 if (res.status == 1) {
                     layer.msg(res.message, {time: 1000}, function () {
-                        window.location.href = "../manage/manage.php";
-
+                        window.location.href = "../loadPage/manage.php";
                     });
                 } else {
                     layer.msg(res.message, {time: 2000});

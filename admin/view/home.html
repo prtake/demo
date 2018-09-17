@@ -12,18 +12,18 @@
     <div class="head-top"><img src="">
     </div>
     <div class="head-name">欢迎<span><?php echo $username;?></span>进入后台管理系统</div>
-    <div class="head-out"><a href="../common/loginout.php">退出</a></div>
+    <div class="head-out"><a href="../function/loginout.php">退出</a></div>
 </div>
 <div class="left">
-    <div class="left-top"><a href="home.php" style="background-color: blue">修改密码</a></div>
-    <div class="left-bt"><a href="../upload/upload.php">上传视频</a></div>
-    <div class="left-bto"><a href="../manage/manage.php">视频管理</a></div>
+    <div class="left-top"><a href="../loadPage/home.php" style="background-color: blue">修改密码</a></div>
+    <div class="left-bt"><a href="../loadPage/upload.php">上传视频</a></div>
+    <div class="left-bto"><a href="../loadPage/manage.php">视频管理</a></div>
 </div>
 
 <div class="right">
     <div class="right-top"><a>修改密码</a></div>
     <!--表单提交-->
-    <form method="post" action="validate.php">
+    <form method="post" action="../function/validate.php">
         <div class="right-xg">
             <div class="right-p0"><label for="p0">输入原密码：</label><input type="password" id="p0" name="oldPwd"></div>
             <div class="right-p1"><label for="p1">输入新密码：</label><input type="password" id="p1" name="fisPwd"></div>
@@ -71,14 +71,14 @@
         $.ajax({
             type: 'post',
             data: {oldPwd: oldPwd, fisPwd: fisPwd, nexPwd: nexPwd},
-            url: 'validate.php',
+            url: '../function/validate.php',
             success: function (d) {
                 res = JSON.parse(d);
                 if (res.status == 0) {
                     layer.msg(res.message, {time: 2000});
                 } else {
                     layer.msg(res.message, {time: 1000}, function () {
-                        window.location.href = '../manage/manage.php';
+                        window.location.href = '../loadPage/manage.php';
                     });
                 }
             }

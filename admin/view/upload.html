@@ -12,16 +12,16 @@
     <div class="head-top"><img src="">
     </div>
     <div class="head-name">欢迎<span><?php echo $username;?></span>进入后台管理系统</div>
-    <div class="head-out"><a href="../common/loginout.php">退出</a></div>
+    <div class="head-out"><a href="../function/loginout.php">退出</a></div>
 </div>
 <div class="left">
-    <div class="left-top"><a href="../home/home.php">修改密码</a></div>
-    <div class="left-bt"><a href="upload.php" style="background-color: blue">上传视频</a></div>
-    <div class="left-bto"><a href="../manage/manage.php">视频管理</a></div>
+    <div class="left-top"><a href="../loadPage/home.php">修改密码</a></div>
+    <div class="left-bt"><a href="../loadPage/upload.php" style="background-color: blue">上传视频</a></div>
+    <div class="left-bto"><a href="../loadPage/manage.php">视频管理</a></div>
 </div>
 <div class="right">
     <div class="right-top"><a>上传视频</a></div>
-    <form method="post" action="upvideo.php" enctype="multipart/form-data">
+    <form method="post" action="../function/upvideo.php" enctype="multipart/form-data">
         <div class="right-xg">
             <div><label for="vdtype">上传视频类型：</label><input type="text" id="vdtype" name="vdtype"></div>
             <div><label for="vdname">视 &nbsp;频 &nbsp;名 &nbsp;称：&nbsp;</label><input type="text" id="vdname"
@@ -55,7 +55,7 @@
         }
         $.ajax({
             type: 'post',
-            url: 'upvideo.php',
+            url: '../function/upvideo.php',
             data: fromdata,
             contentType: false, //前面已经声明了是FormData对象
             processData: false, //表示不需要对数据做处理
@@ -64,7 +64,7 @@
                 res = JSON.parse(res);
                 if (res.status == 1) {
                     layer.msg(res.message, {time: 1000}, function () {
-                        window.location.href = '../manage/manage.php';
+                        window.location.href = '../loadPage/manage.php';
                     });
                 } else {
                     layer.msg(res.message, {time: 2000});
