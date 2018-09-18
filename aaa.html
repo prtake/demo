@@ -5,37 +5,36 @@
     <title>login</title>
     <script src="public/common/jquery-3.3.1/jquery-3.3.1.js"></script>
     <script src="public/common/layer/layer.js"></script>
+    <link rel="stylesheet" href="public/common/css/bootstrap.css">
     <style>
-        .table {
-            border: 1px solid red;
-        }
+
     </style>
 </head>
 <body>
-<h1></h1>
-<div align="center">
-    <table class="table">
-        <tr>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-        </tr>
-        <?php foreach($arr as $v):?>
-        <tr>
-            <td><?php echo $v['0'];?></td>
-            <td><?php echo $v['1'];?></td>
-            <td><?php echo $v['2'];?></td>
-            <td><a href="#" class="a">获取</a></td>
-        </tr>
-        <?php endforeach;?>
-    </table>
-</div>
+<form method="post" enctype="multipart/form-data" action="aaa.php">
+    <div><label for="text">名字：</label><input type="text" id="text"></div>
+    <div><input type="file" class="form-control-static" name="file" id="file"></div>
+    <button class="btn btn-primary">上传</button>
+</form>
 <script>
-    $('.a').click(function () {
-        var ss = $(this).parents('td').siblings().eq(2).text();
-        alert(ss);
+    $('form').submit(function () {
+        var name = $('#text').val();
+        var file = $('#file')[0].file[0];
+        var formdata = new FormData();
+        formdata.append('name', name);
+        formdata.append('file', file);
+        $.ajax({
+            type: 'post',
+            url: 'aaa.php',
+            data: formdata,
+            contentType: false, //前面已经声明了是FormData对象
+            processData: false, //表示不需要对数据做处理
+            cache: false, //上传文件不需要缓存
+            success: function (res) {
+                alert(res);
+            }
+        });
     });
-
 </script>
 </body>
 </html>

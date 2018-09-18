@@ -1,8 +1,12 @@
 * {
     margin: 0;
     padding: 0;
-}
 
+}
+.quan{
+    width: 100%;
+    height: 100%;
+}
 .head {
     height: 100px;
     position: relative;
