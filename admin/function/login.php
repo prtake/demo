@@ -5,7 +5,7 @@
  * Date: 2018/9/11
  * Time: 20:15
  */
-
+/*登录处理*/
 //获取POST过来的表单数据
 $username = htmlspecialchars($_POST['username']) ? htmlspecialchars($_POST['username']) : '';
 $password = MD5($_POST['password']) ? MD5($_POST['password']) : '';

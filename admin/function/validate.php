@@ -5,6 +5,7 @@
  * Date: 2018/9/12
  * Time: 11:15
  */
+/*修改密码*/
 //接收POST过来的数据
 $oldPassword = md5($_POST['oldPwd']) ? md5($_POST['oldPwd']) : '';
 $firstPassword = md5($_POST['fisPwd']) ? md5($_POST['fisPwd']) : '';

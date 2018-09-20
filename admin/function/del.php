@@ -5,6 +5,7 @@
  * Date: 2018/9/17
  * Time: 18:11
  */
+/*删除数据*/
 //加载数据库配置
 require '../common/function.php';
 //接收get传值
@@ -17,7 +18,7 @@ $res->execute(array(':times' => $times));
 $result = $res->fetch(PDO::FETCH_ASSOC);
 //获取结果中的id
 $id = $result['id'];
-$path = $result['vdpath'];
+$path = iconv('utf-8', 'gbk', $result['vdpath']);
 if ($id) {//有结果时
     //根据id删除数据
     $sql = 'delete  from video where id=:id';

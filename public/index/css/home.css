@@ -1,0 +1,21 @@
+.col-center-block {
+    float: none;
+    display: block;
+    margin-left: 300px;
+    margin-right: auto;
+    margin-top: 11px;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    background-color: #9d9d9d;
+}
+.img-responsive {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+.navbar-default{
+    height: 20px;
+}

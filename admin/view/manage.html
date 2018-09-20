@@ -75,7 +75,7 @@
                     <?php endforeach;?>
                 </table>
             </form>
-            <div id="pagination" class="pagination footer navbar-fixed-bottom"></div>
+            <div id="pagination" class="pagination footer"></div>
         </div>
     </div>
 </div>
@@ -115,22 +115,38 @@
 </script>
 <script>
     window.onload = function () {
-        new myPagination({
-            id: 'pagination',
-            curPage: 1, //初始页码
-            pageTotal: 50, //总页数
-            pageAmount: 10,  //每页多少条
-            dataTotal: 500, //总共多少条数据
-            pageSize: 5, //可选,分页个数
-            showPageTotalFlag: true, //是否显示数据统计
-            showSkipInputFlag: true, //是否支持跳转
-            getPage: function (page) {
-                //获取当前页数
-                console.log(page);
+        $.ajax({
+            type: 'post',
+            url: '../function/pagination.php',
+            success: function (res) {
+                res = JSON.parse(res);
+                if (res.dataTotal == 0) {
+                    $('#pagination').hide();
+                } else {
+                    new myPagination({
+                        id: 'pagination',
+                        curPage: 1, //初始页码
+                        pageTotal: res.pageTotal, //总页数
+                        pageAmount: res.pageAmount,  //每页多少条
+                        dataTotal: res.dataTotal, //总共多少条数据
+                        pageSize: 5, //可选,分页个数
+                        showPageTotalFlag: false, //是否显示数据统计
+                        showSkipInputFlag: true, //是否支持跳转
+                        getPage: function (page) {
+                            //获取当前页数
+                            console.log(page);
+
+                        }
+                    })
+                }
             }
-        })
+        });
+
 
     }
+</script>
+<script>
+
 </script>
 </body>
 </html>

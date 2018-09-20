@@ -2,74 +2,71 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>用户登录</title>
-    <link href="../public/index/css/login.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript">
-        function loginClick() {
-            var name = document.login.username.value;
-            var pwd = document.login.password.value;
-            if (name == null || name.length == 0) {
-                alert("用户名不能为空！");
-                return;
-            }
-            if (pwd == null || pwd.length == 0) {
-                alert("密码不能为空！");
-                return;
-            }
-            document.login.submit();
+    <link href="../../public/common/css/bootstrap.css" rel="stylesheet" >
+    <style>
+        #from
+        {
+            background-color: #96b97d;
         }
-    </script>
-    <style type="text/css">
-        .login {
-            text-align: center;
+        .mycenter
+        {
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            width: 500px;
+            padding: 5%;
+            padding-left: 5%;
+            padding-right: 5%;
         }
-
+        .mycenter mysign
+        {
+            width: 440px;
+        }
+        .mycenter input, checkbox, button
+        {
+            margin-top: 2%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        .mycheckbox
+        {
+            margin-top: 10px;
+            margin-left: 40px;
+            margin-bottom: 10px;
+            height: 10px;
+        }
     </style>
 </head>
 <body>
-<div class="login">
-    <table class="login_tb1">
-        <tr align="center" valign="middle">
-            <td height="100%">
-                <table class="login_tb2" cellSpacing=0 cellPadding=0 border=0
-                       align="center"
-                >
-                    <tr valign="middle">
-                        <td class="login_td1" colSpan=2><font face="黑体" size="4px" color="#196ed1">用户登录</font></td>
-                    </tr>
-                    <tr>
-                        <td class="login_td2">
-                            <form action="LoginJsp.jsp" name="login" method="post">
-                                <table>
-                                    <tr>
-                                        <td width="66" height="20" class="login_td">登录名：</td>
-                                        <td width="115" height="20" class="login_td">
-                                            <input class="login_input" type="text" name="username"
-                                            ></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td height="20" class="login_td">密 码：</td>
-                                        <td height="20" class="login_td">
-                                            <input type="password" name="password" class="login_input"></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td height="20" colspan="2" align="center">
-                                            <input type="button" value="登录" class="login_button"
-                                                   onClick="loginClick()"/>
-                                            <input type="reset" value="重置" class="login_button"/>
-                                        </td>
-                                        <td class="login_td" align="left" width=71><a
-                                                href="Regist.html"
-                                        >新用户注册</a></td>
-                                    </tr>
-                                </table>
-                            </form>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-</div>
+<form id="from">
+    <div class="mycenter">
+        <div class="mysign">
+            <div class="col-lg-11 text-center text-info">
+                <h2>请登录</h2>
+            </div>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" name="username" placeholder="请输入账户名" required
+                       autofocus />
+            </div>
+            <div class="col-lg-10">
+            </div>
+            <div class="col-lg-10">
+                <input type="password" class="form-control" name="password" placeholder="请输入密码" required
+                       autofocus />
+            </div>
+            <div class="col-lg-10">
+            </div>
+            <div class="col-lg-10 mycheckbox checkbox">
+                <input type="checkbox" class="col-lg-1">记住密码
+            </div>
+            <div class="col-lg-10">
+            </div>
+            <div class="col-lg-10">
+                <button type="button" id="btn" class="btn btn-success col-lg-12">
+                    登录</button>
+            </div>
+        </div>
+    </div>
+</form>
 </body>

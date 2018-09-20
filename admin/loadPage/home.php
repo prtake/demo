@@ -5,6 +5,7 @@
  * Date: 2018/9/12
  * Time: 11:57
  */
+/*加载修改面页面*/
 //开启session
 session_start();
 //判断session的值是否存在
