@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo  $vdname;?></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .buju {
+            margin-top: 1%;
+        }
+
+        .name {
+            font-family: Arial, Helvetica, sans-serif;
+            display: inline-block;
+            position: relative;
+            float: left;
+        }
+
+        .top {
+            text-align: left;
+            color: #9d9d9d;
+
+        }
+
+        .fh {
+            text-decoration: none;
+            float: right;
+            color: white;
+        }
+
+        .video {
+            background-color: #1F2429;
+
+        }
+
+        .vd {
+            margin-left: 20%;
+        }
+    </style>
+</head>
+<body>
+<div class="buju">
+    <div class="top">
+        <a class="name">视频名称：<?php echo $vdname;?></a>
+        <a href="#" onclick="javascript :history.go(-1);" class="fh">返回</a>
+    </div>
+
+    <div class="video">
+        <div class="vd">
+            <video width="800px" height="500px" controls autobuffer preload="metadata">
+                <source src="<?php echo $path;?>" type="video/mp4">
+                <source src="<?php echo $path;?>" type="video/ogg">
+                您的浏览器不支持 video 标签。
+            </video>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

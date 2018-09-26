@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>视频</title>
+    <link rel="stylesheet" href="../../../public/common/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../public/index/css/home.css">
+    <script src="../../../public/common/jquery-3.3.1/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div class="navbar navbar-default">
+    <div class="pull-left a">
+        <ul class="nav navbar-nav">
+            <li><a href="../loadPage/home.php">首页</a></li>
+            <li><a href="../loadPage/dianshiju.php">电视剧</a></li>
+            <li><a href="../loadPage/dianying.php">电影</a></li>
+            <li><a href="../loadPage/zhongyi.php">综艺</a></li>
+            <li><a href="../loadPage/dongman.php">动漫</a></li>
+        </ul>
+    </div>
+    <!--   <div class="pull-left col-center-block">
+           <input type="text" placeholder="输入搜素内容">
+           <button class="btn btn-info">搜素</button>
+       </div>-->
+    <div class="pull-right">
+        <ul class="nav navbar-nav">
+            <li><a href="../loadPage/login.php">登录</a></li>
+            <li><a href="../loadPage/register.php">注册</a></li>
+        </ul>
+    </div>
+</div>
+<ul class="nav nav-list">
+    <li class="divider"></li>
+</ul>
+<div class="row">
+    <?php foreach( $arr as $v):?>
+    <div class="col-sm-2 col-md-2">
+        <div class="thumbnail">
+            <img src="<?php echo $v['vdpath'];?>" alt="通用的占位符缩略图" class="img-responsive">
+            <div class="caption">
+                <p><?php  echo  $v['vdname'] ;?></p>
+                <p id="path" style="display: none"><?php echo  $v['vdpath'];?></p>
+                <!-- <p>一些示例文本。一些示例文本。</p>-->
+                <a href="../loadPage/video.php?path=<?php echo $v['vdpath'];?>&vdname=<?php  echo  $v['vdname'] ;?>"
+                   class="btn btn-primary" role="button"
+                   id="btn">播放</a>
+            </div>
+        </div>
+    </div>
+    <?php endforeach ;?>
+</div>
+<!--<nav class="navbar navbar-default navbar-fixed-bottom">
+    <p class="text-center">这里的东西不知道写什么就这样吧</p>
+</nav>-->
+</body>
+</html>

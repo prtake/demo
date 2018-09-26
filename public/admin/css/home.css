@@ -10,7 +10,6 @@
 .head {
     height: 100px;
     position: relative;
-    background-color: #66CCCC;
 }
 
 .left {
@@ -47,7 +46,7 @@
 
 .head-out a:hover {
     color: #ff0;
-    background-color: blue;
+    background-color: black;
 }
 
 .head-name span {
@@ -71,7 +70,7 @@
 
 .left a:hover {
     color: #ff0;
-    background-color: blue;
+    background-color: black;
 }
 
 .right-top {
