@@ -18,8 +18,4 @@ try {
     echo '数据库连接失败：' . $e->getMessage();
 }
 
-/*$sql = 'select id,username,passwd from user ';
-$res = $pdo->prepare($sql);
-$result = $res->execute();
-$results = $res->fetch(PDO::FETCH_ASSOC);
-print_r($results);*/
+
